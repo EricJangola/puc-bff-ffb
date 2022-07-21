@@ -1,0 +1,14 @@
+# generated
+dist/
+coverage/
+postgres/
+node_modules/
+
+# tools
+.yarn/
+.vscode/
+cypress/
+
+/newrelic.js
+/jest.setup.ts
+/test

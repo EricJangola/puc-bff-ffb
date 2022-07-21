@@ -1,0 +1,9 @@
+{
+  "clearMocks": true,
+  "coverageDirectory": "coverage",
+  "testEnvironment": "node",
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
+  "transform": {
+    "\\.[jt]s$": ["babel-jest"]
+  }
+}

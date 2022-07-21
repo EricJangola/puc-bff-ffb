@@ -1,0 +1,17 @@
+export default {
+  ERR_STORE_NOT_FOUND: 'Store not found',
+  ERR_DOMAIN_ALREADY_TAKEN: 'The domain is already taken',
+  ERR_STORE_DELIVERY_NOT_FOUND: 'The delivery configuration was not found',
+  ERR_STORE_PICKUP_NOT_FOUND: 'The pickup configuration was not found',
+  ERR_STORE_PAYMENT_METHODS_NOT_FOUND: 'The payments methods were not found',
+  ERR_STORE_PAYMENT_METHODS_NOT_UPDATED: 'The payments methods were not updated',
+  ERR_STORE_PAYMENT_METHODS_NOT_CREATED: 'The payment methods were not created',
+  ERR_STORE_PAYMENT_METHODS_REQUEST_NOT_PROVIDED: 'There is no payment method data to be registered',
+  ERR_STORE_PHONE_NOTIFICATIONS_NOT_FOUND: 'The phone notifications was not found',
+  ERR_STORE_PHONE_NOTIFICATIONS_NOT_UPDATED: 'Phones notifications was not updated',
+  ERR_STORE_PHONE_NOTIFICATIONS_VALIDATION_CODE: 'Error to validate the phone code',
+  ERR_STORE_EMAIL_NOTIFICATIONS_NOT_FOUND: 'The email notifications was not found',
+  ERR_STORE_EMAIL_NOTIFICATIONS_NOT_UPDATED: 'Email notifications was not updated',
+  ERR_STORE_PENDING_ACTIONS: 'There are pending actions for this store',
+  ERR_VIOLATE_PENDING_ACTION_RULE: 'You are not allowed to do this actions because it violates a pending action rule',
+};

@@ -1,0 +1,195 @@
+{
+  "env": {
+    "es2020": true,
+    "node": true,
+    "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "globals": {
+    "__LOCAL__": false,
+    "__DEV__": false,
+    "__PROD__": false
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import-helpers",
+    "prettier"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/typescript"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": [
+      "error"
+    ],
+    "max-len": [
+      "error",
+      120
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "__LOCAL__",
+          "__DEV__",
+          "__PROD__"
+        ]
+      }
+    ],
+    "arrow-parens": [
+      "warn",
+      "as-needed"
+    ],
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "class-methods-use-this": "off",
+    "operator-linebreak": "off",
+    "object-curly-newline": "off",
+    "arrow-body-style": "off",
+    "newline-per-chained-call": "off",
+    "no-void": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.ts",
+          "**/*.spec.ts"
+        ]
+      }
+    ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "module",
+          "/^@/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "@typescript-eslint/type-annotation-spacing": [
+      "error",
+      {
+        "after": true
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error"
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "I"
+        ]
+      },
+      {
+        "selector": "typeAlias",
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "T"
+        ]
+      },
+      {
+        "selector": [
+          "method",
+          "classProperty"
+        ],
+        "format": [
+          "strictCamelCase"
+        ]
+      },
+      {
+        "selector": "enumMember",
+        "format": [
+          "StrictPascalCase"
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "no-undef": "off",
+        "no-shadow": "off",
+        "no-unused-vars": "off",
+        "lines-between-class-members": "off"
+      }
+    },
+    {
+      "files": [
+        "database/migrations/*.ts"
+      ],
+      "rules": {
+        "no-console": "off",
+        "import/no-import-module-exports": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*.test.ts",
+        "**/*.spec.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/no-unsafe-assignment": "off"
+      }
+    }
+  ]
+}
