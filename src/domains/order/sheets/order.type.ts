@@ -1,7 +1,7 @@
 import { TProduct } from './product.type';
 
 export type TOrder = {
-  id: number;
+  id?: number;
   products: TProduct[];
   code: string;
 };
