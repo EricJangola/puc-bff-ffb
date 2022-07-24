@@ -12,7 +12,7 @@ const routes: App.TRoute[] = [
     method: 'post',
     path: '/v1/order',
     handlers: [
-      validateBody(validators.createStore),
+      validateBody(validators.order),
       httpTranslator(createOrderMaestro, {
         mountInboundParameters(request: Request<any, any, { table: string; order: TOrder }>) {
           const { body } = request;

@@ -7,5 +7,5 @@ import { TOrder } from '../sheets/order.type';
 
 export async function publishOrder(order: TOrder, table: string): Promise<void> {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  await publish('order', { order, table });
+  await publish('ffb.order', { order, table });
 }
