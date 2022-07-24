@@ -1,12 +1,11 @@
 import axios from 'axios';
 
 import ffbconfig from '@/config/ffb';
+import { publish } from '@/factories/rabbitmq';
 
 import { TOrder } from '../sheets/order.type';
 
-const api = axios.create({ baseURL: ffbconfig.apiUrl });
-
-export async function createOrder(order: TOrder, table: string): Promise<void> {
-  const response = await api.post<void>('/v1/products', { order, table });
-  return response.data;
+export async function publishOrder(order: TOrder, table: string): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+  await publish('order', { order, table });
 }
