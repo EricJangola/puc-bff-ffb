@@ -7,6 +7,6 @@ import { TProduct } from '../sheets/product.type';
 const api = axios.create({ baseURL: ffbconfig.apiUrl });
 
 export async function getProducts(): Promise<TProduct[]> {
-  const response = await api.get<TProduct[]>('/v1/products');
+  const response = await api.get<TProduct[]>('/burgers');
   return response.data;
 }

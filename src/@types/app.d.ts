@@ -6,6 +6,10 @@ declare namespace App {
     path: string;
     handlers: import('express-serve-static-core').RequestHandler<any>[];
   };
+  type TQueue = {
+    queue: string;
+    method: (data: any) => any;
+  };
 
   type THttpTranslatorOptions<P> = {
     httpStatusCode?: number;
