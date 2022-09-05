@@ -10,7 +10,7 @@ import validators from './validators';
 const routes: App.TRoute[] = [
   {
     method: 'post',
-    path: '/v1/order',
+    path: '/v1/orders',
     handlers: [
       validateBody(validators.order),
       httpTranslator(createOrderMaestro, {
