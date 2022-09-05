@@ -30,8 +30,7 @@
   },
   "include": [
     "./src",
-    "./test",
-    "./database"
+    "./test"
   ],
   "exclude": [
     "./node_modules",
