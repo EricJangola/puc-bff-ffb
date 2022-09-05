@@ -35,7 +35,7 @@ async function sendPushNotification(order: TOrder): Promise<void> {
     },
     token: '',
   };
-  await admin.messaging().send(message);
+  // await admin.messaging().send(message);
 }
 
 const consumers: App.TQueue[] = [
