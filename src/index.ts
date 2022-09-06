@@ -41,7 +41,7 @@ function startServer(): Promise<void> {
 
         reject(error);
       })
-      .listen(appConfig.port || 3000);
+      .listen(process.env.PORT || 5000);
   });
 }
 
