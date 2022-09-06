@@ -8,6 +8,7 @@
   },
   "scripts": {
     "lint:typescript": "tsc --noEmit",
+    "build": "tsc",
     "lint:eslint": "eslint --cache --fix --ext '.js,.ts,.tsx' .",
     "lint": "run-p lint:typescript lint:eslint",
     "start": "nodemon --ext 'js,ts' --exec babel-node --extensions '.js,.ts,.tsx' src/index.ts --insecure-http-parser",
@@ -15,7 +16,6 @@
     "build:clean": "rimraf dist",
     "build:app": "babel src --out-dir dist/app --extensions '.js,.ts,.tsx' --copy-files --no-copy-ignored --source-maps",
     "build:debug": "npm-run-all -s build:clean \"build:app --source-maps\"",
-    "build": "npm-run-all -s build:clean -p build:app",
     "migrate:make": "babel-node ./node_modules/.bin/knex migrate:make --knexfile ./database/knexfile.ts",
     "migrate:latest": "babel-node ./node_modules/.bin/knex migrate:latest --knexfile ./database/knexfile.ts",
     "migrate:rollback": "babel-node ./node_modules/.bin/knex migrate:rollback --knexfile ./database/knexfile.ts",
