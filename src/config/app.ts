@@ -1,7 +1,7 @@
 const { PORT, NODE_ENV, FFBURL = 'https://app.ecwid.com/api/v3', WEBSITE_URL } = process.env;
 
 const appConfig = {
-  port: Number(PORT) || 3000,
+  port: Number(PORT),
   environment: NODE_ENV,
 
   pagination: {
