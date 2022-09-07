@@ -16,7 +16,7 @@
     "strictPropertyInitialization": false,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
+    "outDir": "./build",
     "baseUrl": "./",
     "paths": {
       "@/*": [

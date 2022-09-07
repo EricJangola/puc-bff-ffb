@@ -7,7 +7,7 @@
     "node": "16.17.0"
   },
   "scripts": {
-    "start": "node dist/app/index.js",
+    "start": "node build/index.js",
     "build": "tsc",
     "postinstall": "npm run build",
     "lint:typescript": "tsc --noEmit",
