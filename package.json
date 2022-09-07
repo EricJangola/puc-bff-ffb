@@ -4,21 +4,20 @@
   "license": "ISC",
   "private": true,
   "engines": {
-    "node": "16.17.0"
+    "node": ">=14"
   },
   "scripts": {
-    "start": "node build/index.js",
-    "build": "tsc",
-    "postinstall": "npm run build",
     "lint:typescript": "tsc --noEmit",
     "lint:eslint": "eslint --cache --fix --ext '.js,.ts,.tsx' .",
     "lint": "run-p lint:typescript lint:eslint",
-    "start_old": "nodemon --ext 'js,ts' --exec babel-node --extensions '.js,.ts,.tsx' src/index.ts --insecure-http-parser",
+    "start_build": "node dist/app/index.js",
+    "start": "nodemon --ext 'js,ts' --exec babel-node --extensions '.js,.ts,.tsx' src/index.ts --insecure-http-parser",
     "test": "jest --detectOpenHandles --forceExit",
     "build:clean": "rimraf dist",
     "build:app": "babel src --out-dir dist/app --extensions '.js,.ts,.tsx' --copy-files --no-copy-ignored --source-maps",
+    "build:database": "babel database --out-dir dist/database --extensions '.js,.ts,.tsx' --copy-files --no-copy-ignored",
     "build:debug": "npm-run-all -s build:clean \"build:app --source-maps\"",
-    "build_old": "npm-run-all -s build:clean -p build:app",
+    "build": "npm-run-all -s build:clean -p build:app",
     "migrate:make": "babel-node ./node_modules/.bin/knex migrate:make --knexfile ./database/knexfile.ts",
     "migrate:latest": "babel-node ./node_modules/.bin/knex migrate:latest --knexfile ./database/knexfile.ts",
     "migrate:rollback": "babel-node ./node_modules/.bin/knex migrate:rollback --knexfile ./database/knexfile.ts",
@@ -52,8 +51,12 @@
     "pg": "^8.7.3",
     "uuid": "8.3.2",
     "winston": "3.7.2",
-    "xml2js": "^0.4.23",
-    "typescript": "4.6.3",
+    "xml2js": "^0.4.23"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/steps"
+  },
+  "devDependencies": {
     "@babel/cli": "7.15.7",
     "@babel/core": "7.15.5",
     "@babel/node": "7.15.4",
@@ -92,11 +95,8 @@
     "jest": "^27.5.1",
     "nodemon": "2.0.12",
     "npm-run-all": "4.1.5",
-    "rimraf": "3.0.2"
+    "rimraf": "3.0.2",
+    "typescript": "4.6.3"
   },
-  "cypress-cucumber-preprocessor": {
-    "step_definitions": "cypress/support/steps"
-  },
-  "devDependencies": {},
   "packageManager": "yarn@3.1.1"
 }
